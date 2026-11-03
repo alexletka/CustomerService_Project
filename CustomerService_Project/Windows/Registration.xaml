@@ -1,0 +1,181 @@
+﻿<Window x:Class="CustomerService_Project.Windows.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CustomerService_Project.Windows"
+        mc:Ignorable="d"
+        Style="{StaticResource MaterialDesignWindow}"
+        Title="Registration"
+        Height="600"
+        Width="800"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource PastelBackground}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <ScrollViewer Grid.Row="0"
+                      VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Disabled">
+
+            <StackPanel Margin="30">
+
+                <TextBlock Text="Регистрация"
+                           FontSize="64"
+                           FontFamily="Georgia"
+                           HorizontalAlignment="Center"
+                           Foreground="{StaticResource PastelText}"
+                           Margin="0,0,0,10"/>
+
+                <StackPanel Margin="0,12,0,0">
+                    <Label Content="ФИО"
+                           Padding="0,0,0,5"
+                           FontFamily="Georgia"
+                           FontSize="18"
+                           Foreground="{StaticResource PastelText}"/>
+                    
+
+                    <TextBox Name="FullNameBox"
+                             Padding="8"
+                             FontSize="16"
+                             FontFamily="Georgia"/>
+
+
+                    <TextBlock x:Name="FullNameErrorText"
+                               Foreground="Red"
+                               FontSize="14"
+                               FontStyle="Italic"
+                               FontFamily="Georgia"
+                               Margin="5,3,0,0"
+                               TextWrapping="Wrap"
+                               Visibility="Collapsed"/>
+                </StackPanel>
+
+                <StackPanel Margin="0,20,0,0">
+                    <Label Content="Email"
+                           Padding="0,0,0,5"
+                           FontFamily="Georgia"
+                           FontSize="18"
+                           Foreground="{StaticResource PastelText}"/>
+
+                    
+                    <TextBox Name="MailBox"
+                             Padding="8"
+                             FontSize="16"
+                             FontFamily="Georgia"/>
+
+
+                    <TextBlock x:Name="EmailErrorText"
+                               Foreground="Red"
+                               FontSize="14"
+                               FontStyle="Italic"
+                               FontFamily="Georgia"
+                               Margin="5,3,0,0"
+                               TextWrapping="Wrap"
+                               Visibility="Collapsed"/>
+                </StackPanel>
+
+                <StackPanel Margin="0,20,0,0">
+                    <Label Content="Номер телефона (необязательно)"
+                           Padding="0,0,0,5"
+                           FontFamily="Georgia"
+                           FontSize="18"
+                           Foreground="{StaticResource PastelText}"/>
+
+                    
+                    <TextBox Name="PhoneNumberBox"
+                             Padding="8"
+                             FontSize="16"
+                             FontFamily="Georgia"/>
+                </StackPanel>
+
+                <StackPanel Margin="0,20,0,0">
+                    <Label Content="Пароль"
+                           Padding="0,0,0,5"
+                           FontFamily="Georgia"
+                           FontSize="18"
+                           Foreground="{StaticResource PastelText}"/>
+
+                    
+                    <PasswordBox Name="PasswordInput"
+                                 Padding="8"
+                                 FontSize="16"
+                                 FontFamily="Georgia"/>
+
+
+                    <TextBlock x:Name="PasswordErrorText"
+                               Foreground="Red"
+                               FontSize="14"
+                               FontStyle="Italic"
+                               FontFamily="Georgia"
+                               Margin="5,3,0,0"
+                               TextWrapping="Wrap"
+                               Visibility="Collapsed"/>
+                </StackPanel>
+
+                <StackPanel Margin="0,20,0,0">
+                    <Label Content="Повторите пароль"
+                           Padding="0,0,0,5"
+                           FontFamily="Georgia"
+                           FontSize="18"
+                           Foreground="{StaticResource PastelText}"/>
+
+                    
+                    <PasswordBox Name="PasswordRepeatInput"
+                                 Padding="8"
+                                 FontSize="16"
+                                 FontFamily="Georgia"/>
+
+
+                    <TextBlock x:Name="PasswordRepeatErrorText"
+                               Foreground="Red"
+                               FontSize="14"
+                               FontStyle="Italic"
+                               FontFamily="Georgia"
+                               Margin="5,3,0,0"
+                               TextWrapping="Wrap"
+                               Visibility="Collapsed"/>
+                </StackPanel>
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <Border Grid.Row="1"
+                Background="{StaticResource PastelSurface}"
+                CornerRadius="10"
+                Padding="16,12"
+                Margin="20,10,20,20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+
+                <Button Content="Регистрация"
+                        Padding="15,0"
+                        Margin="8,0"
+                        Width="140"
+                        Height="48"
+                        FontFamily="Georgia"
+                        Style="{StaticResource PastelButton}"
+                        Click="RegisterButton_Click"/>
+
+                <Button Content="Закрыть"
+                        Padding="30,0"
+                        Margin="8,0"
+                        Width="140"
+                        Height="48"
+                        FontFamily="Georgia"
+                        Style="{StaticResource PastelButton}"
+                        Click="CloseButton_Click"/>
+
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</Window>

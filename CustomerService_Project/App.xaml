@@ -1,0 +1,74 @@
+﻿<Application x:Class="CustomerService_Project.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CustomerService_Project"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             StartupUri="Windows/Authorization.xaml">
+
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+                <materialDesign:BundledTheme
+                    BaseTheme="Light"
+                    PrimaryColor="LightGreen"
+                    SecondaryColor="Pink"/>
+
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign2.Defaults.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Основные цвета приложения -->
+            <SolidColorBrush x:Key="PastelBackground" Color="#F4F7F2"/>
+            <SolidColorBrush x:Key="PastelSurface" Color="#FFFFFF"/>
+            <SolidColorBrush x:Key="PastelPrimary" Color="#B8D8C0"/>
+            <SolidColorBrush x:Key="PastelPrimaryHover" Color="#A1C8AC"/>
+            <SolidColorBrush x:Key="PastelSecondary" Color="#F3DEE5"/>
+            <SolidColorBrush x:Key="PastelAccent" Color="#DCE7F5"/>
+            <SolidColorBrush x:Key="PastelText" Color="#35463A"/>
+            <SolidColorBrush x:Key="PastelBorder" Color="#DFE7DE"/>
+
+            <!-- Единый стиль кнопок -->
+            <Style x:Key="PastelButton"
+                   TargetType="{x:Type Button}"
+                   BasedOn="{StaticResource MaterialDesignRaisedButton}">
+
+                <Setter Property="Background"
+                        Value="{StaticResource PastelPrimary}"/>
+                <Setter Property="Foreground"
+                        Value="{StaticResource PastelText}"/>
+                <Setter Property="BorderBrush"
+                        Value="{StaticResource PastelPrimary}"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Padding" Value="18, 0"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="Cursor" Value="Hand"/>
+            </Style>
+
+            <!-- Стиль полей ввода -->
+            <Style TargetType="{x:Type TextBox}"
+                   BasedOn="{StaticResource MaterialDesignTextBox}">
+
+                <Setter Property="materialDesign:TextFieldAssist.UnderlineBrush"
+                        Value="{StaticResource PastelPrimary}"/>
+            </Style>
+
+            <!-- Стиль полей пароля -->
+            <Style TargetType="{x:Type PasswordBox}"
+                   BasedOn="{StaticResource MaterialDesignPasswordBox}">
+
+                <Setter Property="materialDesign:TextFieldAssist.UnderlineBrush"
+                        Value="{StaticResource PastelPrimary}"/>
+            </Style>
+
+            <!-- Стиль выпадающих списков -->
+            <Style TargetType="{x:Type ComboBox}"
+                   BasedOn="{StaticResource MaterialDesignComboBox}">
+
+                <Setter Property="materialDesign:TextFieldAssist.UnderlineBrush"
+                        Value="{StaticResource PastelPrimary}"/>
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
